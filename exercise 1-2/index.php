@@ -18,7 +18,7 @@ class Beverage {
     }
 
     public function getTemperature() {
-        return "The temperature is {$this->temperature}.<br>";
+        return "{$this->temperature}";
     }
 }
 
@@ -27,7 +27,6 @@ $info = $cola->getInfo();
 echo $info;
 
 $temp = $cola->getTemperature();
-echo $temp;
 
 /* EXERCISE 2
 
@@ -50,6 +49,7 @@ class Beer extends Beverage {
     private $name;
     private $alcoholPercentage;
     private $alcoholUnit;
+    private $color;
 
 
     public function __construct(string $name, float $alcoholPercentage, float $alcoholUnit, string $color, float $price, string $temperature = "cold")
@@ -62,7 +62,7 @@ class Beer extends Beverage {
     }
 
     public function getAlcoholPercentage() {
-        return "The alcohol percentage of this beverage is {$this->alcoholPercentage} %.<br>";
+        return "The alcohol percentage of this beverage is {$this->alcoholPercentage} %.<br>" . $this->getInfo();
     }
 
     public function getAlcoholUnit() {
