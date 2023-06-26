@@ -6,6 +6,7 @@ class Beverage {
     protected $color;
     protected $price;
     protected $temperature;
+    const BAR_NAME = 'Het Vervolg';
 
     public function __construct(string $color, float $price, string $temperature = "cold")
     {
@@ -18,6 +19,10 @@ class Beverage {
         return "This beverage is {$this->temperature}, {$this->color} and cost {$this->price} €.<br>";
     }
 
+    public function getBarName() {
+        return self::BAR_NAME;
+    }
+
 }
 
 class Beer extends Beverage {
@@ -25,9 +30,9 @@ class Beer extends Beverage {
     private $alcoholPercentage;
     private $alcoholUnit;
 
-    public function __construct(string $name, float $alcoholPercentage, float $alcoholUnit, string $color, float $price, string $temperature = "cold")
+    public function __construct(string $name, float $alcoholPercentage, float $alcoholUnit, string $color, float $price)
     {
-        parent::__construct($color, $price, $temperature);
+        parent::__construct($color, $price);
         $this->name = $name;
         $this->alcoholPercentage = $alcoholPercentage;
         $this->alcoholUnit = $alcoholUnit;
@@ -46,7 +51,7 @@ class Beer extends Beverage {
     }
 
     public function getBeerInfo() {
-        return "Hi i'm {$this->name} and i have an alcohol percentage of {$this->alcoholPercentage} and i have a {$this->color} color.";
+        return "Hi i'm {$this->name} and i have an alcohol percentage of {$this->alcoholPercentage} and i have a {$this->color} color, you can buy me at " . $this->getBarName() . ".<br>";
     }
 
 }
@@ -61,4 +66,6 @@ echo $duvel->getAlcoholUnit();
 echo $duvel->getColor();
 
 echo $duvel->getBeerInfo();
+
+echo $duvel->getBarName();
 ?>
