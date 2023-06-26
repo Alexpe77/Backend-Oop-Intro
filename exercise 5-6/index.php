@@ -50,8 +50,13 @@ class Beer extends Beverage {
         return "Duvel is a {$this->color} beer.<br>";
     }
 
+    public static $address = 'Melkmarkt 9, 2000 Antwerpen';
+    public function barAddress() {
+        return self::$address;
+    }
+
     public function getBeerInfo() {
-        return "Hi i'm {$this->name} and i have an alcohol percentage of {$this->alcoholPercentage} and i have a {$this->color} color, you can buy me at " . $this->getBarName() . ".<br>";
+        return "Hi i'm {$this->name} and i have an alcohol percentage of {$this->alcoholPercentage} and i have a {$this->color} color, you can buy me at " . $this->getBarName() . ", " . $this->barAddress() . ".<br>";
     }
 
 }
@@ -67,5 +72,6 @@ echo $duvel->getColor();
 
 echo $duvel->getBeerInfo();
 
-echo $duvel->getBarName();
+// echo Beer::$address;
+
 ?>
