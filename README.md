@@ -1,6 +1,6 @@
 # Backend-Oop-Intro
 
-This repo contain 7 exercises that i used to get more familiar with the oop.
+This repo contain 7 exercises that i used to get more familiar with the *Oop*.
 
 ## The objectives
 
@@ -44,4 +44,3 @@ Exercise 7
 
 - Make a static property that can be only accessed from the inside
 - Print this property without creating a new instant of the first class
-
